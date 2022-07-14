@@ -1,0 +1,32 @@
+#include <stdio.h>
+void mostrarmatriz(int mat[][5]){
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            if(i==j)
+            printf("%d-  ",mat[i][j]);
+            else
+            printf("%d  ",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+void main (){
+    int mat[5][5];
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            mat[i][j]=rand()%10;
+        }
+    }
+    printf("\n  Matriz:\n");
+    mostrarmatriz(mat);
+    int soma=0;
+    for(int i=0;i<5;i++){
+        for(int j=i;j<5;j++){
+            if(i!=j){
+                soma+=mat[i][j];
+            }
+        }
+    }
+    printf("\nA soma dos valores acima da diagonal eh : %d\n",soma);
+
+}
